@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as CreacionRouteImport } from './routes/creacion'
+import { Route as CompendioRouteImport } from './routes/compendio'
+import { Route as CampanaRouteImport } from './routes/campana'
 import { Route as IndexRouteImport } from './routes/index'
 
+const CreacionRoute = CreacionRouteImport.update({
+  id: '/creacion',
+  path: '/creacion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompendioRoute = CompendioRouteImport.update({
+  id: '/compendio',
+  path: '/compendio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampanaRoute = CampanaRouteImport.update({
+  id: '/campana',
+  path: '/campana',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/campana': typeof CampanaRoute
+  '/compendio': typeof CompendioRoute
+  '/creacion': typeof CreacionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/campana': typeof CampanaRoute
+  '/compendio': typeof CompendioRoute
+  '/creacion': typeof CreacionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/campana': typeof CampanaRoute
+  '/compendio': typeof CompendioRoute
+  '/creacion': typeof CreacionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/campana' | '/compendio' | '/creacion'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/campana' | '/compendio' | '/creacion'
+  id: '__root__' | '/' | '/campana' | '/compendio' | '/creacion'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CampanaRoute: typeof CampanaRoute
+  CompendioRoute: typeof CompendioRoute
+  CreacionRoute: typeof CreacionRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/creacion': {
+      id: '/creacion'
+      path: '/creacion'
+      fullPath: '/creacion'
+      preLoaderRoute: typeof CreacionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compendio': {
+      id: '/compendio'
+      path: '/compendio'
+      fullPath: '/compendio'
+      preLoaderRoute: typeof CompendioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campana': {
+      id: '/campana'
+      path: '/campana'
+      fullPath: '/campana'
+      preLoaderRoute: typeof CampanaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CampanaRoute: CampanaRoute,
+  CompendioRoute: CompendioRoute,
+  CreacionRoute: CreacionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
