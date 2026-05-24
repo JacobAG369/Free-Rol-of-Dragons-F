@@ -50,6 +50,19 @@ export async function apiFetchAuth<T>(
   return res.json()
 }
 
+export async function apiPatch<T>(path: string, body: unknown): Promise<T> {
+  const res = await fetch(`${API_BASE}${path}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json', ...authHeaders() },
+    body: JSON.stringify(body),
+  })
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}))
+    throw new Error(JSON.stringify(err))
+  }
+  return res.json()
+}
+
 export async function apiPost<T>(path: string, body: unknown): Promise<T> {
   const res = await fetch(`${API_BASE}${path}`, {
     method: 'POST',

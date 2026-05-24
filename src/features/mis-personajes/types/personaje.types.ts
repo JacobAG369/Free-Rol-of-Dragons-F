@@ -9,6 +9,7 @@ export interface PersonajeClaseItem {
 export interface Personaje {
   id: number
   nombre: string
+  campana: number | null
   raza: number
   raza_nombre: string
   trasfondo: string
