@@ -6,6 +6,7 @@ import {
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 import Header from '../components/Header'
+import { AuthProvider } from '../features/auth'
 import appCss from '../styles.css?url'
 
 import type { QueryClient } from '@tanstack/react-query'
@@ -33,10 +34,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="min-h-screen" style={{ background: 'radial-gradient(circle at center, #4c1d95 0%, #0f001a 100%)' }}>
-        <Header />
-        <main className="mx-auto max-w-6xl px-6 py-10">
-          {children}
-        </main>
+        <AuthProvider>
+          <Header />
+          <main className="mx-auto max-w-6xl px-6 py-10">
+            {children}
+          </main>
+        </AuthProvider>
         <Scripts />
         <TanStackDevtools
           config={{ position: 'bottom-right' }}

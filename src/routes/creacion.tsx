@@ -1,7 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { ProtectedRoute } from '@/features/auth/components/ProtectedRoute'
 
 export const Route = createFileRoute('/creacion')({ component: Creacion })
 
 function Creacion() {
-  return <div className="text-white">Creación — próximamente</div>
+  return (
+    <ProtectedRoute>
+      <div className="text-white">Centro de Creación — próximamente</div>
+    </ProtectedRoute>
+  )
 }
