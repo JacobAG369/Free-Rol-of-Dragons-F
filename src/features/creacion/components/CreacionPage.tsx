@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from '@tanstack/react-router'
 import { UserPlus, Wand2, ArrowLeft } from 'lucide-react'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { CrearPersonajeWizard } from './CrearPersonajeWizard'
@@ -60,26 +61,26 @@ export function CreacionPage() {
           </Card>
         </button>
 
-        <Card className="h-full border-white/5 bg-white/3 text-white opacity-50">
-          <CardHeader>
-            <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-white/10">
-              <Wand2 size={20} className="text-white/40" />
-            </div>
-            <CardTitle className="text-white/60">Contenido Homebrew</CardTitle>
-            <CardDescription className="text-white/30">
-              Crea hechizos, objetos mágicos y reglas personalizadas
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="flex flex-col gap-1.5 text-sm text-white/25">
-              <li>· Nuevos hechizos y magias</li>
-              <li>· Objetos mágicos únicos</li>
-              <li>· Reglas de casa</li>
-              <li>· Razas y clases custom</li>
-            </ul>
-            <p className="mt-4 text-xs text-white/25 italic">Próximamente…</p>
-          </CardContent>
-        </Card>
+        <Link to="/homebrew" className="text-left no-underline">
+          <Card className="h-full cursor-pointer border-white/10 bg-white/5 text-white transition-all hover:-translate-y-1 hover:border-blue-500/40 hover:bg-white/8">
+            <CardHeader>
+              <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/20">
+                <Wand2 size={20} className="text-blue-300" />
+              </div>
+              <CardTitle className="text-white">Contenido Homebrew</CardTitle>
+              <CardDescription className="text-white/50">
+                Crea hechizos, objetos mágicos y criaturas personalizadas
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="flex flex-col gap-1.5 text-sm text-white/40">
+                <li>· Hechizos con escuela y nivel</li>
+                <li>· Objetos mágicos únicos</li>
+                <li>· Monstruos con acciones propias</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </Link>
       </div>
     </div>
   )

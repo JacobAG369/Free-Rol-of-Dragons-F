@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as MisPersonajesRouteImport } from './routes/mis-personajes'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as HomebrewRouteImport } from './routes/homebrew'
 import { Route as CreacionRouteImport } from './routes/creacion'
 import { Route as CompendioRouteImport } from './routes/compendio'
 import { Route as CampanaRouteImport } from './routes/campana'
@@ -30,6 +31,11 @@ const MisPersonajesRoute = MisPersonajesRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomebrewRoute = HomebrewRouteImport.update({
+  id: '/homebrew',
+  path: '/homebrew',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreacionRoute = CreacionRouteImport.update({
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/campana': typeof CampanaRoute
   '/compendio': typeof CompendioRoute
   '/creacion': typeof CreacionRoute
+  '/homebrew': typeof HomebrewRoute
   '/login': typeof LoginRoute
   '/mis-personajes': typeof MisPersonajesRoute
   '/register': typeof RegisterRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/campana': typeof CampanaRoute
   '/compendio': typeof CompendioRoute
   '/creacion': typeof CreacionRoute
+  '/homebrew': typeof HomebrewRoute
   '/login': typeof LoginRoute
   '/mis-personajes': typeof MisPersonajesRoute
   '/register': typeof RegisterRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/campana': typeof CampanaRoute
   '/compendio': typeof CompendioRoute
   '/creacion': typeof CreacionRoute
+  '/homebrew': typeof HomebrewRoute
   '/login': typeof LoginRoute
   '/mis-personajes': typeof MisPersonajesRoute
   '/register': typeof RegisterRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/campana'
     | '/compendio'
     | '/creacion'
+    | '/homebrew'
     | '/login'
     | '/mis-personajes'
     | '/register'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/campana'
     | '/compendio'
     | '/creacion'
+    | '/homebrew'
     | '/login'
     | '/mis-personajes'
     | '/register'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/campana'
     | '/compendio'
     | '/creacion'
+    | '/homebrew'
     | '/login'
     | '/mis-personajes'
     | '/register'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   CampanaRoute: typeof CampanaRoute
   CompendioRoute: typeof CompendioRoute
   CreacionRoute: typeof CreacionRoute
+  HomebrewRoute: typeof HomebrewRoute
   LoginRoute: typeof LoginRoute
   MisPersonajesRoute: typeof MisPersonajesRoute
   RegisterRoute: typeof RegisterRoute
@@ -142,6 +155,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/homebrew': {
+      id: '/homebrew'
+      path: '/homebrew'
+      fullPath: '/homebrew'
+      preLoaderRoute: typeof HomebrewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/creacion': {
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   CampanaRoute: CampanaRoute,
   CompendioRoute: CompendioRoute,
   CreacionRoute: CreacionRoute,
+  HomebrewRoute: HomebrewRoute,
   LoginRoute: LoginRoute,
   MisPersonajesRoute: MisPersonajesRoute,
   RegisterRoute: RegisterRoute,
