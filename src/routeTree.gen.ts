@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RegisterRouteImport } from './routes/register'
+import { Route as MisPersonajesRouteImport } from './routes/mis-personajes'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as CreacionRouteImport } from './routes/creacion'
 import { Route as CompendioRouteImport } from './routes/compendio'
@@ -19,6 +20,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const RegisterRoute = RegisterRouteImport.update({
   id: '/register',
   path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MisPersonajesRoute = MisPersonajesRouteImport.update({
+  id: '/mis-personajes',
+  path: '/mis-personajes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/compendio': typeof CompendioRoute
   '/creacion': typeof CreacionRoute
   '/login': typeof LoginRoute
+  '/mis-personajes': typeof MisPersonajesRoute
   '/register': typeof RegisterRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/compendio': typeof CompendioRoute
   '/creacion': typeof CreacionRoute
   '/login': typeof LoginRoute
+  '/mis-personajes': typeof MisPersonajesRoute
   '/register': typeof RegisterRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/compendio': typeof CompendioRoute
   '/creacion': typeof CreacionRoute
   '/login': typeof LoginRoute
+  '/mis-personajes': typeof MisPersonajesRoute
   '/register': typeof RegisterRoute
 }
 export interface FileRouteTypes {
@@ -80,9 +89,17 @@ export interface FileRouteTypes {
     | '/compendio'
     | '/creacion'
     | '/login'
+    | '/mis-personajes'
     | '/register'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/campana' | '/compendio' | '/creacion' | '/login' | '/register'
+  to:
+    | '/'
+    | '/campana'
+    | '/compendio'
+    | '/creacion'
+    | '/login'
+    | '/mis-personajes'
+    | '/register'
   id:
     | '__root__'
     | '/'
@@ -90,6 +107,7 @@ export interface FileRouteTypes {
     | '/compendio'
     | '/creacion'
     | '/login'
+    | '/mis-personajes'
     | '/register'
   fileRoutesById: FileRoutesById
 }
@@ -99,6 +117,7 @@ export interface RootRouteChildren {
   CompendioRoute: typeof CompendioRoute
   CreacionRoute: typeof CreacionRoute
   LoginRoute: typeof LoginRoute
+  MisPersonajesRoute: typeof MisPersonajesRoute
   RegisterRoute: typeof RegisterRoute
 }
 
@@ -109,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/register'
       fullPath: '/register'
       preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mis-personajes': {
+      id: '/mis-personajes'
+      path: '/mis-personajes'
+      fullPath: '/mis-personajes'
+      preLoaderRoute: typeof MisPersonajesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -155,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   CompendioRoute: CompendioRoute,
   CreacionRoute: CreacionRoute,
   LoginRoute: LoginRoute,
+  MisPersonajesRoute: MisPersonajesRoute,
   RegisterRoute: RegisterRoute,
 }
 export const routeTree = rootRouteImport
