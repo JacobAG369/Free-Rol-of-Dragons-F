@@ -64,7 +64,7 @@ export function Step2Atributos({ values, onChange, errors }: Props) {
                   max={20}
                   value={val || ''}
                   onChange={(e) => set(key, e.target.value)}
-                  className="border-white/10 bg-white/5 text-white focus-visible:ring-purple-500/50"
+                  className="border-amber-200/15 bg-amber-100/5 text-white focus-visible:ring-amber-500/50"
                 />
                 <span
                   className={`w-10 text-center text-sm font-semibold ${

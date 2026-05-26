@@ -67,7 +67,7 @@ export function MonstruoForm({ onSuccess }: Props) {
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
             placeholder="Ej. Guardián de las sombras"
-            className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-white/25 outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
+            className="rounded-lg border border-amber-200/15 bg-amber-100/5 px-3 py-2 text-sm text-white placeholder-white/25 outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30"
           />
           {errors.nombre && <p className="text-xs text-red-400">{errors.nombre}</p>}
         </div>
@@ -80,7 +80,7 @@ export function MonstruoForm({ onSuccess }: Props) {
             max={30}
             value={claseArmadura}
             onChange={(e) => setClaseArmadura(Number(e.target.value))}
-            className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
+            className="rounded-lg border border-amber-200/15 bg-amber-100/5 px-3 py-2 text-sm text-white outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30"
           />
           {errors.clase_armadura && <p className="text-xs text-red-400">{errors.clase_armadura}</p>}
         </div>
@@ -92,7 +92,7 @@ export function MonstruoForm({ onSuccess }: Props) {
           <button
             type="button"
             onClick={addAccion}
-            className="flex items-center gap-1.5 rounded-lg border border-white/10 px-3 py-1.5 text-xs font-medium text-white/60 transition-colors hover:border-purple-500/40 hover:bg-white/5 hover:text-white"
+            className="flex items-center gap-1.5 rounded-lg border border-amber-200/15 px-3 py-1.5 text-xs font-medium text-white/60 transition-colors hover:border-amber-500/40 hover:bg-amber-100/5 hover:text-white"
           >
             <Plus size={13} />
             Agregar acción
@@ -103,7 +103,7 @@ export function MonstruoForm({ onSuccess }: Props) {
 
         <div className="flex flex-col gap-3">
           {acciones.map((accion, i) => (
-            <div key={i} className="flex flex-col gap-2 rounded-lg border border-white/10 bg-white/3 p-3">
+            <div key={i} className="flex flex-col gap-2 rounded-lg border border-amber-200/15 bg-amber-100/5 p-3">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-white/40">Acción {i + 1}</span>
                 {acciones.length > 1 && (
@@ -122,14 +122,14 @@ export function MonstruoForm({ onSuccess }: Props) {
                 value={accion.nombre}
                 onChange={(e) => updateAccion(i, 'nombre', e.target.value)}
                 placeholder="Nombre de la acción"
-                className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-white/25 outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
+                className="rounded-lg border border-amber-200/15 bg-amber-100/5 px-3 py-2 text-sm text-white placeholder-white/25 outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30"
               />
               <textarea
                 value={accion.descripcion}
                 onChange={(e) => updateAccion(i, 'descripcion', e.target.value)}
                 placeholder="Descripción del efecto, daño, rango…"
                 rows={2}
-                className="resize-none rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-white/25 outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
+                className="resize-none rounded-lg border border-amber-200/15 bg-amber-100/5 px-3 py-2 text-sm text-white placeholder-white/25 outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30"
               />
             </div>
           ))}
@@ -144,7 +144,7 @@ export function MonstruoForm({ onSuccess }: Props) {
         type="button"
         onClick={handleSubmit}
         disabled={isPending}
-        className="flex items-center justify-center gap-2 rounded-lg bg-purple-600 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-purple-500 disabled:opacity-50"
+        className="flex items-center justify-center gap-2 rounded-lg bg-amber-600 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-amber-500 disabled:opacity-50"
       >
         <Save size={15} />
         {isPending ? 'Guardando…' : 'Guardar monstruo'}

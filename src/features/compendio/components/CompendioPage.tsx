@@ -74,7 +74,7 @@ export function CompendioPage() {
               placeholder="Buscar por nombre…"
               value={filters.busqueda}
               onChange={(e) => setFilters((f) => ({ ...f, busqueda: e.target.value }))}
-              className="border-white/10 bg-white/5 pl-9 text-white placeholder:text-white/30 focus-visible:ring-purple-500/50"
+              className="border-amber-200/15 bg-amber-100/5 pl-9 text-white placeholder:text-white/30 focus-visible:ring-amber-500/50"
             />
           </div>
 

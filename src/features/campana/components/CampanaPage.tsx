@@ -42,7 +42,7 @@ export function CampanaPage() {
           </button>
           <h1 className="text-2xl font-bold text-white">Nueva Campaña</h1>
         </div>
-        <div className="mx-auto w-full max-w-xl rounded-2xl border border-white/10 bg-white/5 p-8">
+        <div className="mx-auto w-full max-w-xl rounded-2xl border border-amber-200/15 bg-amber-100/5 p-8">
           <CrearCampanaForm
             onSuccess={(campana) => {
               toast.success(`¡Campaña "${campana.nombre}" creada!`)
@@ -65,7 +65,7 @@ export function CampanaPage() {
         </div>
         <button
           onClick={() => setView('crear')}
-          className="flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-purple-500"
+          className="flex items-center gap-2 rounded-lg bg-amber-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-amber-500"
         >
           <Plus size={16} />
           Nueva campaña
@@ -74,7 +74,7 @@ export function CampanaPage() {
 
       {isLoading && (
         <div className="flex items-center justify-center py-20">
-          <Loader2 size={32} className="animate-spin text-purple-400" />
+          <Loader2 size={32} className="animate-spin text-amber-400" />
         </div>
       )}
 
@@ -86,7 +86,7 @@ export function CampanaPage() {
 
       {!isLoading && !error && campanas.length === 0 && (
         <div className="flex flex-col items-center gap-4 py-20 text-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-amber-200/15 bg-amber-100/5">
             <Map size={28} className="text-white/30" />
           </div>
           <div>
@@ -95,7 +95,7 @@ export function CampanaPage() {
           </div>
           <button
             onClick={() => setView('crear')}
-            className="mt-2 flex items-center gap-2 rounded-lg bg-purple-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-purple-500"
+            className="mt-2 flex items-center gap-2 rounded-lg bg-amber-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-amber-500"
           >
             <Plus size={16} />
             Crear mi primera campaña

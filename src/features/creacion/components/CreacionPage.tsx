@@ -22,7 +22,7 @@ export function CreacionPage() {
           </button>
           <h1 className="text-2xl font-bold text-white">Creación de Personaje</h1>
         </div>
-        <div className="mx-auto w-full max-w-2xl rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+        <div className="mx-auto w-full max-w-2xl rounded-2xl border border-amber-200/15 bg-amber-100/5 p-8 backdrop-blur-sm">
           <CrearPersonajeWizard />
         </div>
       </div>
@@ -40,10 +40,10 @@ export function CreacionPage() {
 
       <div className="mx-auto grid w-full max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
         <button onClick={() => setView('personaje')} className="text-left">
-          <Card className="h-full cursor-pointer border-white/10 bg-white/5 text-white transition-all hover:-translate-y-1 hover:border-purple-500/40 hover:bg-white/8">
+          <Card className="h-full cursor-pointer border-amber-200/15 bg-amber-100/5 text-white transition-all hover:-translate-y-1 hover:border-amber-500/40 hover:bg-amber-100/8">
             <CardHeader>
-              <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/20">
-                <UserPlus size={20} className="text-purple-300" />
+              <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/20">
+                <UserPlus size={20} className="text-amber-300" />
               </div>
               <CardTitle className="text-white">Crear Personaje</CardTitle>
               <CardDescription className="text-white/50">
@@ -62,7 +62,7 @@ export function CreacionPage() {
         </button>
 
         <Link to="/homebrew" className="text-left no-underline">
-          <Card className="h-full cursor-pointer border-white/10 bg-white/5 text-white transition-all hover:-translate-y-1 hover:border-blue-500/40 hover:bg-white/8">
+          <Card className="h-full cursor-pointer border-amber-200/15 bg-amber-100/5 text-white transition-all hover:-translate-y-1 hover:border-blue-500/40 hover:bg-amber-100/8">
             <CardHeader>
               <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/20">
                 <Wand2 size={20} className="text-blue-300" />

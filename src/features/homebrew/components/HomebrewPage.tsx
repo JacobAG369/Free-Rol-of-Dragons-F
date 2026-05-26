@@ -55,7 +55,7 @@ export function HomebrewPage() {
           </button>
           <h1 className="text-2xl font-bold text-white">{FORM_TITLE[view]}</h1>
         </div>
-        <div className="mx-auto w-full max-w-2xl rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+        <div className="mx-auto w-full max-w-2xl rounded-2xl border border-amber-200/15 bg-amber-100/5 p-8 backdrop-blur-sm">
           {view === 'hechizo' && <HechizoForm onSuccess={() => setView('menu')} />}
           {view === 'objeto' && <ObjetoForm onSuccess={() => setView('menu')} />}
           {view === 'monstruo' && <MonstruoForm onSuccess={() => setView('menu')} />}
@@ -78,7 +78,7 @@ export function HomebrewPage() {
           <button
             key={id}
             onClick={() => setView(id)}
-            className="group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 text-left transition-all hover:-translate-y-1 hover:border-purple-500/40 hover:bg-white/8"
+            className="group flex flex-col gap-4 rounded-2xl border border-amber-200/15 bg-amber-100/5 p-6 text-left transition-all hover:-translate-y-1 hover:border-amber-500/40 hover:bg-amber-100/8"
           >
             <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${bg}`}>
               <Icon size={20} className={color} />

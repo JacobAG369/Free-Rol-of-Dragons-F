@@ -17,11 +17,11 @@ export function CampanaCard({ campana, aventureros, onClick }: Props) {
   return (
     <button
       onClick={onClick}
-      className="group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 text-left transition-all hover:-translate-y-0.5 hover:border-purple-500/40 hover:bg-white/8"
+      className="group flex flex-col gap-4 rounded-2xl border border-amber-200/15 bg-amber-100/5 p-5 text-left transition-all hover:-translate-y-0.5 hover:border-amber-500/40 hover:bg-amber-100/8"
     >
       <div className="flex items-start justify-between gap-2">
         <h3 className="text-base font-semibold text-white leading-snug">{campana.nombre}</h3>
-        <span className="shrink-0 rounded-full bg-purple-500/20 px-2.5 py-0.5 text-xs font-medium text-purple-300">
+        <span className="shrink-0 rounded-full bg-amber-500/20 px-2.5 py-0.5 text-xs font-medium text-amber-300">
           DM: {campana.director}
         </span>
       </div>

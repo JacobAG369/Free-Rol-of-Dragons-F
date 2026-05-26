@@ -16,7 +16,7 @@ function Stat({ label, value }: { label: string; value: number }) {
 
 export function MonstruoCard({ monstruo }: Props) {
   return (
-    <Card className="border-white/10 bg-white/5 text-white transition-all hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/8">
+    <Card className="border-amber-200/15 bg-amber-100/5 text-white transition-all hover:-translate-y-0.5 hover:border-amber-200/25 hover:bg-amber-100/8">
       <CardHeader>
         <div className="flex items-start justify-between gap-2">
           <CardTitle className="text-white">{monstruo.nombre}</CardTitle>
@@ -31,7 +31,7 @@ export function MonstruoCard({ monstruo }: Props) {
           <span>·</span>
           <span>{monstruo.puntos_golpe} PG</span>
         </div>
-        <div className="grid grid-cols-6 gap-1 rounded-lg bg-white/5 p-2">
+        <div className="grid grid-cols-6 gap-1 rounded-lg bg-amber-100/5 p-2">
           <Stat label="FUE" value={monstruo.fuerza} />
           <Stat label="DES" value={monstruo.destreza} />
           <Stat label="CON" value={monstruo.constitucion} />

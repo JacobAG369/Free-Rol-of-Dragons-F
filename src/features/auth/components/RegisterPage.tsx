@@ -60,7 +60,7 @@ export function RegisterPage() {
 
   return (
     <div className="flex min-h-[70vh] items-center justify-center">
-      <Card className="w-full max-w-md border-white/10 bg-white/5 text-white backdrop-blur-sm">
+      <Card className="w-full max-w-md border-amber-200/15 bg-amber-100/5 text-white backdrop-blur-sm">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl text-white">Crear cuenta</CardTitle>
           <CardDescription className="text-white/50">
@@ -81,7 +81,7 @@ export function RegisterPage() {
                 value={form.username}
                 onChange={(e) => field('username', e.target.value)}
                 onFocus={() => touch('username')}
-                className="border-white/10 bg-white/5 text-white placeholder:text-white/30 focus-visible:ring-purple-500/50"
+                className="border-amber-200/15 bg-amber-100/5 text-white placeholder:text-white/30 focus-visible:ring-amber-500/50"
               />
               <ValidationHints
                 value={form.username}
@@ -101,7 +101,7 @@ export function RegisterPage() {
                 value={form.email}
                 onChange={(e) => field('email', e.target.value)}
                 onFocus={() => touch('email')}
-                className="border-white/10 bg-white/5 text-white placeholder:text-white/30 focus-visible:ring-purple-500/50"
+                className="border-amber-200/15 bg-amber-100/5 text-white placeholder:text-white/30 focus-visible:ring-amber-500/50"
               />
               {fieldErrors.email && (
                 <p className="text-xs text-red-400">{fieldErrors.email}</p>
@@ -116,7 +116,7 @@ export function RegisterPage() {
                 value={form.password}
                 onChange={(e) => field('password', e.target.value)}
                 onFocus={() => touch('password')}
-                className="border-white/10 bg-white/5 text-white placeholder:text-white/30 focus-visible:ring-purple-500/50"
+                className="border-amber-200/15 bg-amber-100/5 text-white placeholder:text-white/30 focus-visible:ring-amber-500/50"
               />
               <ValidationHints
                 value={form.password}
@@ -134,14 +134,14 @@ export function RegisterPage() {
             <button
               type="submit"
               disabled={isPending}
-              className="mt-1 rounded-lg bg-purple-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-purple-500 disabled:opacity-50"
+              className="mt-1 rounded-lg bg-amber-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-amber-500 disabled:opacity-50"
             >
               {isPending ? 'Creando cuenta…' : 'Crear cuenta'}
             </button>
 
             <p className="text-center text-sm text-white/40">
               ¿Ya tienes cuenta?{' '}
-              <Link to="/login" className="text-purple-400 hover:text-purple-300">
+              <Link to="/login" className="text-amber-400 hover:text-amber-300">
                 Inicia sesión
               </Link>
             </p>

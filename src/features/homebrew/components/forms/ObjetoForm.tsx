@@ -48,7 +48,7 @@ export function ObjetoForm({ onSuccess }: Props) {
           value={values.nombre}
           onChange={(e) => setValues((v) => ({ ...v, nombre: e.target.value }))}
           placeholder="Ej. Espada del crepúsculo"
-          className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-white/25 outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
+          className="rounded-lg border border-amber-200/15 bg-amber-100/5 px-3 py-2 text-sm text-white placeholder-white/25 outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30"
         />
         {errors.nombre && <p className="text-xs text-red-400">{errors.nombre}</p>}
       </div>
@@ -58,7 +58,7 @@ export function ObjetoForm({ onSuccess }: Props) {
         <select
           value={values.categoria}
           onChange={(e) => setValues((v) => ({ ...v, categoria: e.target.value }))}
-          className="rounded-lg border border-white/10 bg-black/40 px-3 py-2 text-sm text-white outline-none focus:border-purple-500/50"
+          className="rounded-lg border border-amber-200/15 bg-black/40 px-3 py-2 text-sm text-white outline-none focus:border-amber-500/50"
         >
           <option value="">Selecciona…</option>
           {CATEGORIAS_OBJETO.map((c) => (
@@ -68,7 +68,7 @@ export function ObjetoForm({ onSuccess }: Props) {
         {errors.categoria && <p className="text-xs text-red-400">{errors.categoria}</p>}
       </div>
 
-      <div className="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 px-4 py-3">
+      <div className="flex items-center justify-between rounded-lg border border-amber-200/15 bg-amber-100/5 px-4 py-3">
         <div>
           <p className="text-sm font-medium text-white">Objeto mágico</p>
           <p className="text-xs text-white/40">Requiere sintonización o tiene propiedades arcanas</p>
@@ -76,7 +76,7 @@ export function ObjetoForm({ onSuccess }: Props) {
         <button
           type="button"
           onClick={() => setValues((v) => ({ ...v, es_magico: !v.es_magico }))}
-          className={`relative h-6 w-11 rounded-full transition-colors ${values.es_magico ? 'bg-purple-600' : 'bg-white/20'}`}
+          className={`relative h-6 w-11 rounded-full transition-colors ${values.es_magico ? 'bg-amber-600' : 'bg-amber-100/15'}`}
         >
           <span
             className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${values.es_magico ? 'translate-x-5' : ''}`}
@@ -92,7 +92,7 @@ export function ObjetoForm({ onSuccess }: Props) {
         type="button"
         onClick={handleSubmit}
         disabled={isPending}
-        className="flex items-center justify-center gap-2 rounded-lg bg-purple-600 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-purple-500 disabled:opacity-50"
+        className="flex items-center justify-center gap-2 rounded-lg bg-amber-600 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-amber-500 disabled:opacity-50"
       >
         <Save size={15} />
         {isPending ? 'Guardando…' : 'Guardar objeto'}

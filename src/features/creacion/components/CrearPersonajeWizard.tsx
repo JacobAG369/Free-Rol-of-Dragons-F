@@ -82,7 +82,7 @@ export function CrearPersonajeWizard() {
           type="button"
           onClick={() => { setErrors({}); setStep((s) => s - 1) }}
           disabled={step === 0}
-          className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-white/50 transition-colors hover:bg-white/10 hover:text-white disabled:invisible"
+          className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-white/50 transition-colors hover:bg-amber-100/10 hover:text-white disabled:invisible"
         >
           <ChevronLeft size={16} />
           Anterior
@@ -92,7 +92,7 @@ export function CrearPersonajeWizard() {
           <button
             type="button"
             onClick={next}
-            className="flex items-center gap-1.5 rounded-lg bg-purple-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-purple-500"
+            className="flex items-center gap-1.5 rounded-lg bg-amber-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-amber-500"
           >
             Siguiente
             <ChevronRight size={16} />
@@ -102,7 +102,7 @@ export function CrearPersonajeWizard() {
             type="button"
             onClick={save}
             disabled={isPending}
-            className="flex items-center gap-1.5 rounded-lg bg-purple-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-purple-500 disabled:opacity-50"
+            className="flex items-center gap-1.5 rounded-lg bg-amber-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-amber-500 disabled:opacity-50"
           >
             <Save size={16} />
             {isPending ? 'Guardando…' : 'Guardar personaje'}

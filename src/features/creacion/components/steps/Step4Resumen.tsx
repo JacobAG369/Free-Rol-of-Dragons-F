@@ -36,7 +36,7 @@ export function Step4Resumen({ step1, step2, step3, raza, clase }: Props) {
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+      <div className="rounded-xl border border-amber-200/15 bg-amber-100/5 p-4">
         <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-white/40">
           Información básica
         </p>
@@ -45,22 +45,22 @@ export function Step4Resumen({ step1, step2, step3, raza, clase }: Props) {
         <Row label="Clase" value={`${clase?.nombre ?? '—'} (${clase?.dado_golpe ?? '—'})`} />
       </div>
 
-      <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+      <div className="rounded-xl border border-amber-200/15 bg-amber-100/5 p-4">
         <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-white/40">
           Atributos
         </p>
         <div className="grid grid-cols-3 gap-2">
           {STATS.map(([key, abbr]) => (
-            <div key={key} className="flex flex-col items-center rounded-lg bg-white/5 py-2">
+            <div key={key} className="flex flex-col items-center rounded-lg bg-amber-100/5 py-2">
               <span className="text-xs text-white/40">{abbr}</span>
               <span className="text-lg font-bold text-white">{step2[key]}</span>
-              <span className="text-xs text-purple-300">{mod(step2[key])}</span>
+              <span className="text-xs text-amber-300">{mod(step2[key])}</span>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+      <div className="rounded-xl border border-amber-200/15 bg-amber-100/5 p-4">
         <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-white/40">
           Trasfondo y personalidad
         </p>
@@ -68,8 +68,8 @@ export function Step4Resumen({ step1, step2, step3, raza, clase }: Props) {
         <Row label="Alineamiento" value={step3.alineamiento ?? '—'} />
       </div>
 
-      <div className="rounded-xl border border-purple-500/20 bg-purple-500/10 p-4">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-purple-300/60">
+      <div className="rounded-xl border border-amber-500/20 bg-amber-500/10 p-4">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-amber-300/60">
           Stats calculados (nivel 1)
         </p>
         <Row label="Puntos de golpe máx." value={maxHP} />

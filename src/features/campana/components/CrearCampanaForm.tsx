@@ -36,7 +36,7 @@ export function CrearCampanaForm({ onSuccess, onCancel }: Props) {
           value={nombre}
           onChange={(e) => setNombre(e.target.value)}
           placeholder="Ej. La Maldición de Strahd"
-          className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-white/25 outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
+          className="rounded-lg border border-amber-200/15 bg-amber-100/5 px-3 py-2 text-sm text-white placeholder-white/25 outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30"
         />
         {errors.nombre && <p className="text-xs text-red-400">{errors.nombre}</p>}
       </div>
@@ -51,7 +51,7 @@ export function CrearCampanaForm({ onSuccess, onCancel }: Props) {
           onChange={(e) => setNotas(e.target.value)}
           placeholder="Contexto de la campaña, premisa, reglas de la mesa…"
           rows={4}
-          className="resize-none rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-white/25 outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
+          className="resize-none rounded-lg border border-amber-200/15 bg-amber-100/5 px-3 py-2 text-sm text-white placeholder-white/25 outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30"
         />
       </div>
 
@@ -59,7 +59,7 @@ export function CrearCampanaForm({ onSuccess, onCancel }: Props) {
         <button
           type="button"
           onClick={onCancel}
-          className="rounded-lg px-4 py-2 text-sm font-medium text-white/50 transition-colors hover:bg-white/10 hover:text-white"
+          className="rounded-lg px-4 py-2 text-sm font-medium text-white/50 transition-colors hover:bg-amber-100/10 hover:text-white"
         >
           Cancelar
         </button>
@@ -67,7 +67,7 @@ export function CrearCampanaForm({ onSuccess, onCancel }: Props) {
           type="button"
           onClick={handleSubmit}
           disabled={isPending}
-          className="flex items-center gap-2 rounded-lg bg-purple-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-purple-500 disabled:opacity-50"
+          className="flex items-center gap-2 rounded-lg bg-amber-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-amber-500 disabled:opacity-50"
         >
           <Save size={15} />
           {isPending ? 'Creando…' : 'Crear campaña'}

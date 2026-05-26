@@ -15,7 +15,7 @@ export function MisPersonajesPage() {
         </div>
         <Link
           to="/creacion"
-          className="flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white no-underline transition-colors hover:bg-purple-500"
+          className="flex items-center gap-2 rounded-lg bg-amber-600 px-4 py-2 text-sm font-semibold text-white no-underline transition-colors hover:bg-amber-500"
         >
           <UserPlus size={16} />
           Crear personaje
@@ -24,7 +24,7 @@ export function MisPersonajesPage() {
 
       {isLoading && (
         <div className="flex items-center justify-center py-20">
-          <Loader2 size={32} className="animate-spin text-purple-400" />
+          <Loader2 size={32} className="animate-spin text-amber-400" />
         </div>
       )}
 
@@ -36,7 +36,7 @@ export function MisPersonajesPage() {
 
       {!isLoading && !error && personajes?.length === 0 && (
         <div className="flex flex-col items-center gap-4 py-20 text-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-amber-200/15 bg-amber-100/5">
             <Users size={28} className="text-white/30" />
           </div>
           <div>
@@ -45,7 +45,7 @@ export function MisPersonajesPage() {
           </div>
           <Link
             to="/creacion"
-            className="mt-2 flex items-center gap-2 rounded-lg bg-purple-600 px-5 py-2.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-purple-500"
+            className="mt-2 flex items-center gap-2 rounded-lg bg-amber-600 px-5 py-2.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-amber-500"
           >
             <UserPlus size={16} />
             Crear mi primer personaje

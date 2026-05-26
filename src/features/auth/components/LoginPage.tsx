@@ -47,7 +47,7 @@ export function LoginPage() {
 
   return (
     <div className="flex min-h-[70vh] items-center justify-center">
-      <Card className="w-full max-w-md border-white/10 bg-white/5 text-white backdrop-blur-sm">
+      <Card className="w-full max-w-md border-amber-200/15 bg-amber-100/5 text-white backdrop-blur-sm">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl text-white">Iniciar sesión</CardTitle>
           <CardDescription className="text-white/50">
@@ -63,7 +63,7 @@ export function LoginPage() {
                 placeholder="heroe@taverna.com"
                 value={form.email}
                 onChange={(e) => field('email', e.target.value)}
-                className="border-white/10 bg-white/5 text-white placeholder:text-white/30 focus-visible:ring-purple-500/50"
+                className="border-amber-200/15 bg-amber-100/5 text-white placeholder:text-white/30 focus-visible:ring-amber-500/50"
               />
               {fieldErrors.email && (
                 <p className="text-xs text-red-400">{fieldErrors.email}</p>
@@ -77,7 +77,7 @@ export function LoginPage() {
                 placeholder="••••••••"
                 value={form.password}
                 onChange={(e) => field('password', e.target.value)}
-                className="border-white/10 bg-white/5 text-white placeholder:text-white/30 focus-visible:ring-purple-500/50"
+                className="border-amber-200/15 bg-amber-100/5 text-white placeholder:text-white/30 focus-visible:ring-amber-500/50"
               />
               {fieldErrors.password && (
                 <p className="text-xs text-red-400">{fieldErrors.password}</p>
@@ -93,14 +93,14 @@ export function LoginPage() {
             <button
               type="submit"
               disabled={isPending}
-              className="mt-1 rounded-lg bg-purple-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-purple-500 disabled:opacity-50"
+              className="mt-1 rounded-lg bg-amber-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-amber-500 disabled:opacity-50"
             >
               {isPending ? 'Entrando…' : 'Entrar'}
             </button>
 
             <p className="text-center text-sm text-white/40">
               ¿No tienes cuenta?{' '}
-              <Link to="/register" className="text-purple-400 hover:text-purple-300">
+              <Link to="/register" className="text-amber-400 hover:text-amber-300">
                 Regístrate
               </Link>
             </p>

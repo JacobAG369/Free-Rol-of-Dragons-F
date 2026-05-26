@@ -15,7 +15,7 @@ export function ValidationHints({ value, rules, visible }: Props) {
   if (!visible) return null
 
   return (
-    <ul className="flex flex-col gap-1.5 rounded-lg border border-white/10 bg-white/5 p-3">
+    <ul className="flex flex-col gap-1.5 rounded-lg border border-amber-200/15 bg-amber-100/5 p-3">
       {rules.map((rule) => {
         const passes = rule.test(value)
         return (

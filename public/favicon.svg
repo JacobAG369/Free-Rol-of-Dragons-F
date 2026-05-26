@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#241910"/>
+      <stop offset="100%" stop-color="#100a05"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e6c878"/>
+      <stop offset="55%" stop-color="#c9a24b"/>
+      <stop offset="100%" stop-color="#8c6f2f"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="50" cy="50" r="49" fill="url(#bg)"/>
+  <circle cx="50" cy="50" r="46" fill="none" stroke="url(#gold)" stroke-width="2.5"/>
+  <circle cx="50" cy="50" r="41" fill="none" stroke="#c9a24b" stroke-opacity="0.35" stroke-width="1"/>
+
+  <!-- Dragon head, facing left -->
+  <g fill="url(#gold)">
+    <!-- back-swept horns -->
+    <path d="M60 28 C 70 16, 82 12, 88 16 C 80 20, 74 26, 70 34 Z"/>
+    <path d="M64 33 C 74 27, 84 28, 88 33 C 80 35, 74 39, 70 45 Z"/>
+    <!-- crest spikes down the neck -->
+    <path d="M68 44 L 84 47 L 70 53 Z"/>
+    <path d="M70 54 L 85 60 L 71 63 Z"/>
+    <!-- main head + snout -->
+    <path d="M70 34
+             C 66 30, 59 28, 53 31
+             C 45 35, 38 40, 31 44
+             C 24 48, 16 50, 10 53
+             C 16 56, 23 56, 30 55
+             C 27 59, 22 61, 17 62
+             C 26 65, 36 64, 45 60
+             C 53 57, 60 57, 66 60
+             C 70 54, 71 45, 70 38 Z"/>
+    <!-- snout nostril notch -->
+    <path d="M12 53 L 20 53 L 16 56 Z" fill="#100a05"/>
+    <!-- lower fang -->
+    <path d="M17 62 L 23 60 L 20 70 Z"/>
+  </g>
+
+  <!-- reptilian eye -->
+  <ellipse cx="46" cy="42" rx="4.2" ry="3" fill="#100a05" transform="rotate(-22 46 42)"/>
+  <ellipse cx="46" cy="42" rx="1" ry="2.6" fill="#e6c878" transform="rotate(-22 46 42)"/>
+</svg>

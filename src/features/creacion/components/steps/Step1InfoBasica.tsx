@@ -41,7 +41,7 @@ export function Step1InfoBasica({ values, onChange, errors }: Props) {
           placeholder="Aragorn, Hermione, Drizzt…"
           value={values.nombre}
           onChange={(e) => set('nombre', e.target.value)}
-          className="border-white/10 bg-white/5 text-white placeholder:text-white/30 focus-visible:ring-purple-500/50"
+          className="border-amber-200/15 bg-amber-100/5 text-white placeholder:text-white/30 focus-visible:ring-amber-500/50"
         />
         {errors.nombre && <p className="text-xs text-red-400">{errors.nombre}</p>}
       </div>
@@ -51,7 +51,7 @@ export function Step1InfoBasica({ values, onChange, errors }: Props) {
         <select
           value={values.raza_id || ''}
           onChange={(e) => set('raza_id', Number(e.target.value))}
-          className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 disabled:opacity-50"
+          className="rounded-md border border-amber-200/15 bg-amber-100/5 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50 disabled:opacity-50"
           disabled={loadingRazas}
         >
           <option value="" disabled className="bg-[#1a0a2e]">
@@ -71,7 +71,7 @@ export function Step1InfoBasica({ values, onChange, errors }: Props) {
         <select
           value={values.clase_id || ''}
           onChange={(e) => set('clase_id', Number(e.target.value))}
-          className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 disabled:opacity-50"
+          className="rounded-md border border-amber-200/15 bg-amber-100/5 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50 disabled:opacity-50"
           disabled={loadingClases}
         >
           <option value="" disabled className="bg-[#1a0a2e]">

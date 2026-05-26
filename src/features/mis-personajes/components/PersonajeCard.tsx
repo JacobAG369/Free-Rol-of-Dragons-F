@@ -14,7 +14,7 @@ export function PersonajeCard({ personaje }: Props) {
   const nivelTotal = personaje.clases.reduce((sum, c) => sum + c.nivel_en_clase, 0)
 
   return (
-    <div className="group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 transition-all hover:-translate-y-0.5 hover:border-purple-500/40 hover:bg-white/8">
+    <div className="group flex flex-col gap-4 rounded-2xl border border-amber-200/15 bg-amber-100/5 p-5 transition-all hover:-translate-y-0.5 hover:border-amber-500/40 hover:bg-amber-100/8">
       <div className="flex items-start justify-between">
         <div>
           <h3 className="text-base font-semibold text-white">{personaje.nombre}</h3>
@@ -24,7 +24,7 @@ export function PersonajeCard({ personaje }: Props) {
           </p>
         </div>
         {nivelTotal > 0 && (
-          <span className="flex items-center gap-1 rounded-full bg-purple-500/20 px-2.5 py-0.5 text-xs font-semibold text-purple-300">
+          <span className="flex items-center gap-1 rounded-full bg-amber-500/20 px-2.5 py-0.5 text-xs font-semibold text-amber-300">
             <Star size={10} />
             Nv {nivelTotal}
           </span>
@@ -50,7 +50,7 @@ export function PersonajeCard({ personaje }: Props) {
           ][i]
           const mod = Math.floor((val - 10) / 2)
           return (
-            <div key={label} className="rounded-lg bg-white/5 py-1.5">
+            <div key={label} className="rounded-lg bg-amber-100/5 py-1.5">
               <div className="text-[10px] font-medium text-white/30">{label}</div>
               <div className="text-sm font-bold text-white">{val}</div>
               <div className="text-[10px] text-white/40">{mod >= 0 ? `+${mod}` : mod}</div>

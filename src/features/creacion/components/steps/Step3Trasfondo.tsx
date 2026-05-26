@@ -32,7 +32,7 @@ export function Step3Trasfondo({ values, onChange, errors }: Props) {
         <select
           value={values.trasfondo ?? ''}
           onChange={(e) => onChange({ ...values, trasfondo: e.target.value as Step3Values['trasfondo'] })}
-          className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+          className="rounded-md border border-amber-200/15 bg-amber-100/5 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50"
         >
           <option value="" disabled className="bg-[#1a0a2e]">
             Selecciona un trasfondo
@@ -56,8 +56,8 @@ export function Step3Trasfondo({ values, onChange, errors }: Props) {
               onClick={() => onChange({ ...values, alineamiento: a as Step3Values['alineamiento'] })}
               className={`rounded-lg border px-2 py-2 text-xs font-medium transition-colors ${
                 values.alineamiento === a
-                  ? 'border-purple-500 bg-purple-500/30 text-purple-200'
-                  : 'border-white/10 bg-white/5 text-white/50 hover:bg-white/10 hover:text-white'
+                  ? 'border-amber-500 bg-amber-500/30 text-amber-200'
+                  : 'border-amber-200/15 bg-amber-100/5 text-white/50 hover:bg-amber-100/10 hover:text-white'
               }`}
             >
               {a}
